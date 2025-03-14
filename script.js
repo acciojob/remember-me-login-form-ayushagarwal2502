@@ -10,3 +10,13 @@ function submitForm(event){
     }
     alert(`Logged in as ${username}`);
 }
+window.onload = function() {
+    const savedCredentials = JSON.parse(localStorage.getItem("data"));
+    if (savedCredentials) {
+        document.getElementById("existing").style.display = "block";
+    }
+}
+document.getElementById("existing").onclick = function() {
+    const savedCredentials = JSON.parse(localStorage.getItem("data"));
+    alert(`Logged in as ${savedCredentials.username}`);
+}
